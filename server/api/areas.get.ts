@@ -1,1 +1,1 @@
-export default defineCachedEventHandler(event => listAreas(event), { maxAge: 900, swr: true, name: 'areas' })
+export default defineCachedEventHandler(event => listAreas(event), { maxAge: 300, swr: true, name: 'areas-v2' })

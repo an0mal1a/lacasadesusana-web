@@ -31,12 +31,19 @@ function search() {
   )
 }
 
-const sel = 'peer absolute inset-0 size-full cursor-pointer appearance-none bg-transparent pl-[3.25rem] pr-8 pt-5 text-[0.9375rem] text-ink outline-none'
+const sel = 'peer absolute inset-0 size-full cursor-pointer appearance-none bg-transparent pl-[3.25rem] pr-10 pt-5 text-[0.9375rem] text-ink outline-none'
+// One filter: a row of the framed list on phones, a rounded cell of the pill on desktop.
+const row = 'field relative block h-[3.75rem] transition-colors hover:bg-stone lg:h-16 lg:rounded-full lg:border-0'
+const icon = 'pointer-events-none absolute left-5 top-1/2 size-[1.15rem] -translate-y-1/2 text-muted'
+const caption = 'label pointer-events-none absolute left-[3.25rem] top-2.5 text-muted lg:top-3'
+const chevron = 'pointer-events-none absolute right-4 top-1/2 size-4 -translate-y-1/2 text-faint'
 </script>
 
 <template>
+  <!-- Phones and tablets: the operation toggle, then the three filters as rows of one framed list, then the button.
+       Desktop: one white pill with everything in a row. -->
   <form
-    class="grid gap-1 rounded-[1.5rem] bg-white p-2 text-ink shadow-[0_30px_60px_-30px_rgb(23_34_31/0.45)] lg:grid-cols-[auto_1.2fr_1fr_1fr_auto] lg:items-center lg:rounded-full"
+    class="grid gap-2.5 rounded-[1.75rem] bg-white p-2.5 text-ink shadow-[0_30px_60px_-30px_rgb(23_34_31/0.45)] lg:grid-cols-[auto_1.2fr_1fr_1fr_auto] lg:items-center lg:gap-1 lg:rounded-full lg:p-2"
     role="search"
     @submit.prevent="search"
   >
@@ -55,37 +62,34 @@ const sel = 'peer absolute inset-0 size-full cursor-pointer appearance-none bg-t
       </label>
     </fieldset>
 
-    <label class="field relative block h-16 rounded-full transition-colors hover:bg-stone">
-      <MapPin class="pointer-events-none absolute left-5 top-1/2 size-[1.15rem] -translate-y-1/2 text-muted" :stroke-width="1.6" aria-hidden="true" />
-      <span class="label pointer-events-none absolute left-[3.25rem] top-3 text-muted">{{ t('search.area') }}</span>
-      <select v-model="city" :class="sel">
-        <option value="">{{ t('search.anyArea') }}</option>
-        <option v-for="a in areas" :key="a.city" :value="a.city">{{ a.city }} ({{ a.count }})</option>
-      </select>
-      <ChevronDown class="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2 text-faint" aria-hidden="true" />
-    </label>
-
-    <div class="grid grid-cols-2 gap-1 lg:contents">
-      <label class="field relative block h-16 rounded-full transition-colors hover:bg-stone">
-        <Home class="pointer-events-none absolute left-5 top-1/2 size-[1.15rem] -translate-y-1/2 text-muted" :stroke-width="1.6" aria-hidden="true" />
-        <span class="label pointer-events-none absolute left-[3.25rem] top-3 text-muted">{{ t('search.type') }}</span>
+    <div class="divide-y divide-line overflow-hidden rounded-[1.25rem] ring-1 ring-line lg:contents">
+      <label :class="row">
+        <MapPin :class="icon" :stroke-width="1.6" aria-hidden="true" />
+        <span :class="caption">{{ t('search.area') }}</span>
+        <select v-model="city" :class="sel">
+          <option value="">{{ t('search.anyArea') }}</option>
+          <option v-for="a in areas" :key="a.city" :value="a.city">{{ a.city }} ({{ a.count }})</option>
+        </select>
+        <ChevronDown :class="chevron" aria-hidden="true" />
+      </label>
+      <label :class="row">
+        <Home :class="icon" :stroke-width="1.6" aria-hidden="true" />
+        <span :class="caption">{{ t('search.type') }}</span>
         <select v-model="type" :class="sel">
           <option value="">{{ t('search.anyType') }}</option>
           <option v-for="ty in TYPES" :key="ty" :value="ty">{{ t(`catalogue.types.${ty}`) }}</option>
         </select>
-        <ChevronDown class="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2 text-faint" aria-hidden="true" />
+        <ChevronDown :class="chevron" aria-hidden="true" />
       </label>
-      <label class="field relative block h-16 rounded-full transition-colors hover:bg-stone">
-        <Euro class="pointer-events-none absolute left-5 top-1/2 size-[1.15rem] -translate-y-1/2 text-muted" :stroke-width="1.6" aria-hidden="true" />
-        <span class="label pointer-events-none absolute left-[3.25rem] top-3 text-muted">{{ t('search.budget') }}</span>
+      <label :class="row">
+        <Euro :class="icon" :stroke-width="1.6" aria-hidden="true" />
+        <span :class="caption">{{ t('search.budget') }}</span>
         <select v-model="maxPrice" :class="sel" class="tabular">
           <option value="">{{ t('search.anyBudget') }}</option>
           <option v-for="b in budgets" :key="b" :value="String(b)">{{ money(b) }}{{ operation === 'alquiler' ? ` ${t('search.perMonth')}` : '' }}</option>
         </select>
-        <ChevronDown class="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2 text-faint" aria-hidden="true" />
+        <ChevronDown :class="chevron" aria-hidden="true" />
       </label>
-
-
     </div>
 
     <button type="submit" class="btn h-14 px-8 lg:h-[3.75rem]">

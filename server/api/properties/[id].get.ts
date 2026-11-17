@@ -8,5 +8,5 @@ export default defineCachedEventHandler(
     if (!property) throw createError({ statusCode: 404, statusMessage: 'Property not found' })
     return property
   },
-  { maxAge: 300, swr: true, name: 'property-v2', getKey: event => `${getRouterParam(event, 'id')}:${getQuery(event).lang}` },
+  { maxAge: 60, swr: true, name: 'property-v3', getKey: event => `${getRouterParam(event, 'id')}:${getQuery(event).lang}` },
 )

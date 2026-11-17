@@ -23,12 +23,16 @@ export async function vestta<T = any>(
   path: string,
   opts: { method?: 'GET' | 'POST' | 'PATCH' | 'PUT'; query?: Record<string, unknown>; body?: unknown; idempotencyKey?: string } = {},
 ): Promise<T> {
-  const { apiKey, baseUrl } = useRuntimeConfig(event).vestta
+  const { apiKey, baseUrl, watermark } = useRuntimeConfig(event).vestta
   if (!apiKey) throw new VesttaError(503, 'Vestta API key not configured')
 
+  // Listing photos come without the agency watermark unless NUXT_VESTTA_WATERMARK asks for it (the API's `watermark` flag,
+  // on the list and on the detail). Vestta prepares the clean copies on the first request and caches them.
+  const listing = (opts.method ?? 'GET') === 'GET' && /^\/properties(\/|$)/.test(path)
   // Drop empty query values: Vestta treats unknown params as noise, but empty strings as filters.
   const query = Object.fromEntries(
-    Object.entries(opts.query ?? {}).filter(([, v]) => v !== undefined && v !== null && v !== ''),
+    Object.entries({ ...opts.query, ...(listing ? { watermark: String(watermark) === 'true' } : {}) })
+      .filter(([, v]) => v !== undefined && v !== null && v !== ''),
   )
 
   try {

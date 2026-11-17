@@ -43,6 +43,7 @@ export default defineNuxtConfig({
     vestta: {
       apiKey: '', // NUXT_VESTTA_API_KEY
       baseUrl: 'https://api.vestta.io/v1', // NUXT_VESTTA_BASE_URL
+      watermark: false, // NUXT_VESTTA_WATERMARK: true serves the photos with the agency watermark, as the CRM's public channels do
     },
     smtp: {
       host: '', // NUXT_SMTP_HOST

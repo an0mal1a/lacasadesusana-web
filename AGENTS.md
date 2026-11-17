@@ -45,7 +45,7 @@ shared/                  code used by both client and server
   utils/forms.ts         zod schemas for every form + AREAS + DIAL_CODES + toE164
   utils/property.ts      slugify, idFromSlug, primaryPrice
 server/
-  api/properties/        catalogue list + detail (cached 5 min, SWR)
+  api/properties/        catalogue list + detail (cached 1 min, SWR; photos without watermark unless NUXT_VESTTA_WATERMARK)
   api/areas.get.ts       cities with counts
   api/forms/*.post.ts    contact, search-request, rental-profile, sell
   api/__sitemap__/urls   dynamic listing URLs for the sitemap

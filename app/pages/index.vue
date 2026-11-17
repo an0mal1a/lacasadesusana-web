@@ -80,8 +80,9 @@ useSeoMeta({
 <template>
   <div>
     <!-- ── Hero: the houses first ── -->
-    <section class="relative z-10 p-2 md:p-3" :aria-label="t('home.featured')">
-      <div class="relative isolate flex h-[64svh] min-h-[30rem] flex-col justify-end overflow-hidden rounded-[var(--radius-hero)] bg-ink lg:h-[calc(100svh-1.5rem)] lg:min-h-[44rem]">
+    <!-- On phones the photo runs edge to edge under the header (rounded only at its foot) and the search card rises into it. -->
+    <section class="relative z-10 md:p-3" :aria-label="t('home.featured')">
+      <div class="relative isolate flex h-[74svh] min-h-[32rem] flex-col justify-end overflow-hidden rounded-b-[var(--radius-hero)] bg-ink md:h-[64svh] md:rounded-[var(--radius-hero)] lg:h-[calc(100svh-1.5rem)] lg:min-h-[44rem]">
         <div class="absolute inset-0 -z-10">
           <div
             v-for="(s, i) in slides"
@@ -105,7 +106,7 @@ useSeoMeta({
           <div class="absolute inset-0 bg-[linear-gradient(180deg,rgb(10_16_14/0.45)_0%,transparent_22%,transparent_45%,rgb(10_16_14/0.62)_100%)]" />
         </div>
 
-        <div class="wrap pb-12 text-white lg:pb-36">
+        <div class="wrap pb-20 text-white md:pb-12 lg:pb-36">
           <div class="flex flex-wrap items-end justify-between gap-8">
             <div class="max-w-[52rem]">
               <h1 class="hero-in font-display text-display font-light tracking-[-0.025em] [text-wrap:pretty]">{{ titleParts[0] }}<br v-if="titleParts[1]" class="hidden md:block" /> {{ titleParts[1] }}</h1>
@@ -150,7 +151,7 @@ useSeoMeta({
           <div class="wrap"><HeroSearch /></div>
         </div>
       </div>
-      <div class="relative z-10 -mt-8 px-2 lg:hidden"><HeroSearch /></div>
+      <div class="wrap relative z-10 -mt-14 md:-mt-8 lg:hidden"><HeroSearch /></div>
     </section>
 
     <!-- ── Intro: one photo, the promise, three facts ── -->

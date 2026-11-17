@@ -83,8 +83,10 @@ const allLocales = computed(() => locales.value as { code: string; name: string 
       </div>
     </div>
 
+    <!-- Teleported: the header's backdrop-filter would make it the containing block of this fixed panel and squeeze it to 72px. -->
+    <Teleport to="body">
     <Transition name="drawer">
-      <div v-if="open" id="site-menu" class="fixed inset-x-0 bottom-0 top-[4.5rem] z-30 overflow-y-auto bg-white xl:hidden">
+      <div v-if="open" id="site-menu" class="fixed inset-x-0 bottom-0 top-[4.5rem] z-30 overflow-y-auto overscroll-contain bg-white xl:hidden" data-lenis-prevent>
         <nav class="wrap flex min-h-full flex-col pb-10 pt-6" aria-label="Main">
           <ul>
             <li v-for="(l, i) in [...links, { to: localePath('contact'), label: t('nav.contact') }]" :key="l.to" class="drawer-item border-b border-line" :style="{ transitionDelay: `${80 + i * 45}ms` }">
@@ -108,6 +110,7 @@ const allLocales = computed(() => locales.value as { code: string; name: string 
         </nav>
       </div>
     </Transition>
+    </Teleport>
   </header>
 </template>
 
