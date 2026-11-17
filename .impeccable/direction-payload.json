@@ -1,0 +1,124 @@
+{
+  "title": "Elige el mundo visual — La Casa de Susana",
+  "question": "El sorteo ha asignado «Espart i Savina». Quédatela, coge una alternativa o vuelve a tirar.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Espart i Savina",
+      "kicker": "THE ROLL",
+      "lineage": "Oficio payés ibicenco: esteras de esparto trenzado y vigas de sabina",
+      "thesis": "La web se teje como el esparto y se sostiene como un techo de sabina: el oficio que amuebla cada gran villa de Ibiza enmarca el catálogo.",
+      "palette": ["#C8A24E", "#2E2822", "#8E8676", "#F4F2EC", "#13C6C9"],
+      "materials": ["esparto trenzado en bandas geométricas", "vigas de sabina plateada", "cal blanca como paspartú de foto"],
+      "viewport": "Una viga de sabina lleva la navegación; la foto de la villa destacada entra en tiras que se destrenzan del esparto; un dintel de sabina abajo lleva el buscador real (Comprar/Alquilar, zona, presupuesto, habitaciones, Ref).",
+      "risk": "Si el trenzado se pinta como textura de cesta, cae en bohemio hippie-market en vez de lujo; tiene que ser geométrico y preciso.",
+      "raised": [
+        {"from": "challenger-teletext", "raise": "Cada propiedad tiene una referencia corta que se teclea directamente: «Ref 1355» abre la ficha desde cualquier página."},
+        {"from": "challenger-quotes", "raise": "Etiquetas literales en todas partes: «Villas en venta», «Deja tu casa», nunca «Descubre» ni «Explora»."},
+        {"from": "challenger-coil", "raise": "Cada sección es una hilada horizontal con su propia medida; el ritmo vertical se cuenta en hiladas."},
+        {"from": "challenger-bauhaus", "raise": "El turquesa del logo se raciona a un solo papel: acción y estado activo, nada más."},
+        {"from": "challenger-lowbrow", "raise": "Cobertura total: ninguna zona queda en blanco de plantilla, todo el lienzo es esparto, sabina o cal."}
+      ]
+    },
+    {
+      "id": "model-pick",
+      "label": "Casament",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "La casa payesa ibicenca: volúmenes cúbicos encalados, dinteles de sabina, huecos pequeños que enmarcan el mar",
+      "thesis": "Cada sección es una estancia encalada y cada foto se ve por un hueco hondo en un muro de cal.",
+      "palette": ["#F6F5F1", "#1D2B2E", "#B9B3A7", "#13C6C9"],
+      "materials": ["cal a capas con sombras duras", "dintel de sabina", "huecos profundos"],
+      "viewport": "Un muro de cal ocupa toda la pantalla; la villa destacada se ve por un hueco profundo con sombra de mediodía, y el buscador va apoyado en el poyo.",
+      "risk": "Es lo más familiar: el blanco encalado minimalista es donde aterrizan casi todas las inmobiliarias mediterráneas de lujo."
+    },
+    {
+      "id": "challenger-basin",
+      "label": "Aigües de Cala Comte",
+      "verdict": "competitive",
+      "lineage": "Cubeta de suminagashi traducida a las aguas someras de Ibiza (WebGL de fluidos)",
+      "thesis": "La página es agua turquesa sobre posidonia: el cursor la remueve y las propiedades salen a la superficie.",
+      "palette": ["#0A3B44", "#13C6C9", "#5EFFFF", "#E9F4F2"],
+      "materials": ["cáusticas de agua en WebGL", "pradera de posidonia", "arena clara"],
+      "viewport": "El agua ocupa toda la pantalla y se mueve con el puntero; la villa destacada aparece bajo la superficie y el buscador flota encima.",
+      "case": "Acierta con el público (el mar es lo que compran) pero pierde en claridad: el catálogo compite con la simulación y el rendimiento en móvil sufre.",
+      "risk": "Coste de GPU en móviles y en conexiones malas; puede leerse como una demo técnica en vez de como una agencia."
+    },
+    {
+      "id": "challenger-teletext",
+      "label": "Teletext Service",
+      "verdict": "declined",
+      "lineage": "Revistas de teletexto",
+      "thesis": "El catálogo como índice de páginas de tres dígitos.",
+      "palette": ["#000000", "#FFFF00", "#00FFFF", "#FFFFFF"],
+      "materials": ["mosaico de bloques", "cuadrícula de 40×24"],
+      "viewport": "Índice P100 con villas como filas numeradas.",
+      "case": "Pierde en los dos ejes: un comprador de lujo no se reconoce en el teletexto.",
+      "risk": "Novedad retro sin relación con Ibiza.",
+      "kept": "Direccionamiento directo: cada propiedad se abre tecleando su Ref."
+    },
+    {
+      "id": "challenger-quotes",
+      "label": "Industrial Quote Grammar",
+      "verdict": "declined",
+      "lineage": "Streetwear industrial",
+      "thesis": "Nombrar lo obvio entre comillas rectas.",
+      "palette": ["#FFFFFF", "#000000", "#FF6A00"],
+      "materials": ["algodón y nylon", "franjas de peligro"],
+      "viewport": "Rótulos gigantes entre comillas sobre fondo blanco.",
+      "case": "Pierde en los dos ejes: es un registro urbano y agresivo frente al lujo discreto.",
+      "risk": "Tono opuesto a la marca.",
+      "kept": "Señalética literal: cada zona se llama por lo que es."
+    },
+    {
+      "id": "challenger-coil",
+      "label": "Coiled Earth Tower",
+      "verdict": "declined",
+      "lineage": "Torre de barro en churros",
+      "thesis": "Hiladas de barro que suben a mano.",
+      "palette": ["#B5532F", "#5A3A22", "#EFE6D8"],
+      "materials": ["churros de terracota", "juntas de barbotina"],
+      "viewport": "Torre de hiladas de barro con el texto en bandas.",
+      "case": "Pierde en los dos ejes: es justo el cliché de terracota y crema del sector.",
+      "risk": "Cae en el rut terracota.",
+      "kept": "El ritmo en hiladas horizontales."
+    },
+    {
+      "id": "challenger-bauhaus",
+      "label": "Bauhaus Workshop",
+      "verdict": "declined",
+      "lineage": "Curso preliminar de la Bauhaus",
+      "thesis": "Primarios como ejercicios de equilibrio.",
+      "palette": ["#FFFFFF", "#111111", "#E1251B", "#F7D417", "#1D4FA0"],
+      "materials": ["papel blanco de taller", "formas primarias"],
+      "viewport": "Composición de círculo, cuadrado y triángulo.",
+      "case": "Pierde en los dos ejes: la marca es turquesa y Mediterráneo, no primarios.",
+      "risk": "Ajeno a la marca.",
+      "kept": "Color con un solo papel: el turquesa solo para la acción."
+    },
+    {
+      "id": "challenger-lowbrow",
+      "label": "Lowbrow Gallery Panel",
+      "verdict": "declined",
+      "lineage": "Pintura lowbrow de hot-rod",
+      "thesis": "Un retablo abarrotado lacado a brillo.",
+      "palette": ["#E2231A", "#00A6D6", "#111111"],
+      "materials": ["laca de caramelo", "contorno negro"],
+      "viewport": "Retablo con figuras compitiendo.",
+      "case": "Pierde en los dos ejes: es ruidoso y kitsch para un público discreto.",
+      "risk": "Contrario al lujo.",
+      "kept": "Cobertura total del lienzo, sin fondo neutro de plantilla."
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "buildPath": {"value": "code"},
+  "canon": true,
+  "canonCard": {
+    "label": "El estándar del sector",
+    "thesis": "Lo que hacen las inmobiliarias de lujo de Ibiza, ejecutado impecablemente.",
+    "palette": ["#FFFFFF", "#1A1A1A", "#13C6C9"],
+    "materials": ["foto de villa a sangre", "rejilla limpia de fichas"],
+    "viewport": "Foto de villa a pantalla completa, logo blanco, barra de búsqueda y debajo una rejilla de fichas.",
+    "risk": "Por definición, indistinguible de la competencia."
+  },
+  "steer": true
+}

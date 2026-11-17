@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-17T12:00:00Z",
+  "title": "Design System: La Casa de Susana",
+  "extensions": {
+    "colorMeta": {
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "oklch(100% 0 0)", "tonalRamp": ["#0b0b0b", "#252525", "#424242", "#616161", "#828282", "#a5a5a5", "#c9c9c9", "#eeeeee"] },
+      "stone": { "role": "neutral", "displayName": "Warm Stone", "canonical": "oklch(96.8% 0.006 85)", "tonalRamp": ["#0c0b09", "#262522", "#43423f", "#63615e", "#84827e", "#a7a5a1", "#cbc9c5", "#f0eeea"] },
+      "stone-2": { "role": "neutral", "displayName": "Pressed Stone", "canonical": "oklch(93.2% 0.010 82)", "tonalRamp": ["#0d0b07", "#28251f", "#45423c", "#64615b", "#85827b", "#a8a49e", "#ccc9c2", "#f2eee7"] },
+      "line": { "role": "neutral", "displayName": "Hairline", "canonical": "oklch(90.8% 0.010 82)", "tonalRamp": ["#0d0b07", "#28251f", "#45423c", "#64615b", "#85827b", "#a8a49e", "#ccc9c2", "#f2eee7"] },
+      "line-strong": { "role": "neutral", "displayName": "Hairline Strong", "canonical": "oklch(84.0% 0.014 82)", "tonalRamp": ["#0e0b05", "#28251e", "#46413a", "#656159", "#868279", "#a9a49c", "#cdc8bf", "#f3eee5"] },
+      "ink": { "role": "primary", "displayName": "Pine Ink", "canonical": "oklch(24.0% 0.017 176)", "tonalRamp": ["#040d0b", "#1d2825", "#394542", "#586461", "#788682", "#9ba9a5", "#bfcdc9", "#e4f2ee"] },
+      "ink-2": { "role": "primary", "displayName": "Pine Ink Lifted", "canonical": "oklch(32.6% 0.021 171)", "tonalRamp": ["#030e0a", "#1b2824", "#374640", "#566560", "#778781", "#99a9a3", "#bdcec7", "#e2f3ed"] },
+      "muted": { "role": "neutral", "displayName": "Warm Muted", "canonical": "oklch(51.8% 0.010 85)", "tonalRamp": ["#0d0b07", "#272520", "#44423c", "#64615b", "#85827c", "#a8a59e", "#ccc9c2", "#f2eee7"] },
+      "faint": { "role": "neutral", "displayName": "Warm Faint", "canonical": "oklch(67.7% 0.012 85)", "tonalRamp": ["#0e0b06", "#28251e", "#45423b", "#646159", "#86827a", "#a9a59c", "#cdc9c0", "#f2eee5"] },
+      "mar": { "role": "tertiary", "displayName": "Mar Turquoise (logo badge only)", "canonical": "oklch(75.0% 0.126 197)", "tonalRamp": ["#00151d", "#003439", "#005458", "#007579", "#00989c", "#00bdc0", "#48e2e5", "#76ffff"] },
+      "alert": { "role": "secondary", "displayName": "Brick Alert", "canonical": "oklch(51.6% 0.165 33)", "tonalRamp": ["#370000", "#5e0000", "#840000", "#ab2e16", "#d2543c", "#fb785e", "#ff9d82", "#ffc3a6"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "One per page: the hero headline over photography, and catalogue and form page titles. Gambetta Light." },
+      "title": { "displayName": "Section Title", "purpose": "Every section heading. Gambetta Light, short measures." },
+      "headline": { "displayName": "Headline", "purpose": "Sub-section headings inside a page: listing Description/Features/Location/Enquire, form step titles." },
+      "card-title": { "displayName": "Card Title", "purpose": "Listing card titles and small serif names." },
+      "body": { "displayName": "Body", "purpose": "Ledes and paragraphs in muted, 36-58ch." },
+      "body-listing": { "displayName": "Listing Prose", "purpose": "CRM descriptions, max 68ch, ink-2." },
+      "button": { "displayName": "Button", "purpose": "Pill button labels." },
+      "price": { "displayName": "Price", "purpose": "Card prices, tabular lining numerals." },
+      "label": { "displayName": "Label", "purpose": "Card operation tags, search captions, footer column headings. Sentence case." }
+    },
+    "shadows": [
+      { "name": "floating-search", "value": "0 30px 60px -30px rgb(23 34 31 / 0.45)", "purpose": "The hero search bar floating over the hero photo." },
+      { "name": "photo-pill", "value": "0 10px 30px -12px rgb(23 34 31 / 0.5)", "purpose": "White 'all photos' button over the listing gallery." },
+      { "name": "button-lift", "value": "0 10px 24px -12px rgb(23 34 31 / 0.45)", "purpose": "Primary pill on hover only." },
+      { "name": "header-hairline", "value": "0 1px 0 var(--color-line)", "purpose": "Bottom edge of the solid header." },
+      { "name": "focus-halo", "value": "0 0 0 4px rgb(23 34 31 / 0.08)", "purpose": "Inputs on focus, with an ink border." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Reveals, entrances, view transitions, nudges, progress." },
+      { "name": "ease-soft", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Cross-fades, button states, hover zoom, chip selection." },
+      { "name": "hero-crossfade", "value": "opacity 1.8s ease-soft, every 7s; photo scale 1.08 to 1 over 9s linear", "purpose": "Home hero cycling up to four featured listings; stops when an indicator is chosen." },
+      { "name": "hero-entrance", "value": "rise 24px + fade, 1.2s ease-out, 120ms stagger", "purpose": "Hero headline, lede and villa chip on load; page titles use 20px over 1.1s." },
+      { "name": "reveal-image", "value": "clip-path inset(100% 0 0 0) to inset(0) 1.2s ease-out; image scale 1.12 to 1 over 1.8s ease-out; threshold 0.12", "purpose": "Editorial photos unveil from the bottom once in view." },
+      { "name": "v-reveal", "value": "translateY(28px) + opacity 0 to rest; opacity 1s, transform 1.1s ease-out; rootMargin -8% bottom; --d stagger", "purpose": "Headings, text and list items rise in once." },
+      { "name": "step-transition", "value": "translateX(±28px) + fade; opacity 0.35s ease-soft, transform 0.5s ease-out", "purpose": "Form steps slide in the direction of travel." },
+      { "name": "step-progress", "value": "scaleX 0 to 1 from left, 0.7s ease-out", "purpose": "Form progress segments." },
+      { "name": "view-transition-root", "value": "old: fade out 0.35s ease-soft; new: fade in + 12px rise 0.6s ease-out", "purpose": "Route changes." },
+      { "name": "view-transition-listing", "value": "view-transition-name listing-{id}; group 0.7s ease-out", "purpose": "Card photo morphs into the listing hero." },
+      { "name": "hover-zoom", "value": "scale 1.025 over 2.2s ease-soft", "purpose": "The only photo hover. Gentle by design." },
+      { "name": "nudge", "value": "translateX(4px) 0.45s ease-out", "purpose": "Arrows inside a hovered group." },
+      { "name": "link-under", "value": "background-size 0 to 100% 1px, 0.45s ease-out", "purpose": "Nav and footer link underline draws from the left." },
+      { "name": "button-press", "value": "scale 0.98; background/shadow 0.3s ease-soft", "purpose": "Pill button feedback." },
+      { "name": "drawer", "value": "opacity 0.4s; items rise 16px over 0.7s, 45ms stagger", "purpose": "Mobile menu." },
+      { "name": "reduced-motion", "value": "durations 0.01ms; view transitions off; reveals shown; hero autoplay and zoom off", "purpose": "Everything is simply present." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" },
+      { "name": "wrap-max", "value": "1440px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ink pill for the primary action on every surface; the arrow nudges on hover.",
+      "html": "<button class=\"ds-btn\">Private search <svg class=\"ds-nudge\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></button>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; min-height: 3.25rem; padding: 0.85rem 1.6rem; border: 0; border-radius: 999px; font-family: var(--font-sans, 'Supreme', system-ui, sans-serif); font-weight: 500; font-size: 0.9375rem; white-space: nowrap; background: var(--color-ink, #17221f); color: var(--color-paper, #ffffff); cursor: pointer; transition: background-color 0.3s cubic-bezier(0.22,1,0.36,1), transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s cubic-bezier(0.22,1,0.36,1); } .ds-btn:hover { background: var(--color-ink-2, #2a3833); box-shadow: 0 10px 24px -12px rgb(23 34 31 / 0.45); } .ds-btn:active { transform: scale(0.98); } .ds-btn:focus-visible { outline: 2px solid var(--color-ink, #17221f); outline-offset: 3px; } .ds-nudge { transition: transform 0.45s cubic-bezier(0.16,1,0.3,1); } .ds-btn:hover .ds-nudge { transform: translateX(4px); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary pill: inset currentColor ring, fills ink on hover.",
+      "html": "<button class=\"ds-btn-ghost\">All properties <span class=\"ds-count\">48</span></button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 0.6rem; min-height: 3.25rem; padding: 0.85rem 1.6rem; border: 0; border-radius: 999px; font-family: var(--font-sans, 'Supreme', system-ui, sans-serif); font-weight: 500; font-size: 0.9375rem; background: transparent; color: var(--color-ink, #17221f); box-shadow: inset 0 0 0 1px currentColor; cursor: pointer; transition: background-color 0.3s cubic-bezier(0.22,1,0.36,1), color 0.3s cubic-bezier(0.22,1,0.36,1); } .ds-btn-ghost:hover { background: var(--color-ink, #17221f); color: var(--color-paper, #ffffff); box-shadow: inset 0 0 0 1px var(--color-ink, #17221f); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--color-ink, #17221f); outline-offset: 3px; } .ds-count { font-variant-numeric: tabular-nums lining-nums; color: var(--color-muted, #6b6862); } .ds-btn-ghost:hover .ds-count { color: rgb(255 255 255 / 0.7); }"
+    },
+    {
+      "name": "Light Button",
+      "kind": "button",
+      "refersTo": "button-light",
+      "description": "White pill on dark panels and over the home hero.",
+      "html": "<div class=\"ds-dark\"><button class=\"ds-btn-light\">Contact</button></div>",
+      "css": ".ds-dark { background: var(--color-ink, #17221f); padding: 24px; border-radius: 1.75rem; } .ds-btn-light { display: inline-flex; align-items: center; min-height: 3.25rem; padding: 0.85rem 1.6rem; border: 0; border-radius: 999px; font-family: var(--font-sans, 'Supreme', system-ui, sans-serif); font-weight: 500; font-size: 0.9375rem; background: var(--color-paper, #ffffff); color: var(--color-ink, #17221f); cursor: pointer; transition: background-color 0.3s cubic-bezier(0.22,1,0.36,1); } .ds-btn-light:hover { background: var(--color-stone, #f6f4f0); } .ds-btn-light:focus-visible { outline: 2px solid var(--color-paper, #ffffff); outline-offset: 3px; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "52px field with label above; ink border and soft halo on focus; money variant formats as you type.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-label\">Maximum budget <em>Optional</em></span><span class=\"ds-money\"><input class=\"ds-input\" inputmode=\"numeric\" placeholder=\"3.000.000\"><span class=\"ds-suffix\">€</span></span></label>",
+      "css": ".ds-field { display: block; max-width: 22rem; font-family: var(--font-sans, 'Supreme', system-ui, sans-serif); } .ds-label { display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.875rem; font-weight: 500; color: var(--color-ink, #17221f); } .ds-label em { font-style: normal; font-weight: 400; font-size: 0.75rem; color: var(--color-muted, #6b6862); } .ds-money { position: relative; display: block; } .ds-input { display: block; width: 100%; min-height: 3.25rem; padding: 0.8rem 4rem 0.8rem 1rem; background: var(--color-paper, #ffffff); border: 1px solid var(--color-line, #e4e0d9); border-radius: 0.875rem; font: inherit; font-size: 1rem; color: var(--color-ink, #17221f); font-variant-numeric: tabular-nums; transition: border-color 0.2s, box-shadow 0.2s; } .ds-input::placeholder { color: var(--color-faint, #9b978f); } .ds-input:hover { border-color: #cfcac1; } .ds-input:focus { outline: none; border-color: var(--color-ink, #17221f); box-shadow: 0 0 0 4px rgb(23 34 31 / 0.08); } .ds-input[aria-invalid='true'] { border-color: var(--color-alert, #b3361f); } .ds-suffix { position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); font-size: 0.9375rem; color: var(--color-muted, #6b6862); pointer-events: none; }"
+    },
+    {
+      "name": "Choice Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "44px pill for single and multiple choice in forms; the chosen chip turns ink.",
+      "html": "<div class=\"ds-chips\"><label class=\"ds-chip ds-on\"><input type=\"checkbox\" checked> Sea view</label><label class=\"ds-chip\"><input type=\"checkbox\"> Pool</label><label class=\"ds-chip\"><input type=\"checkbox\"> Privacy</label></div>",
+      "css": ".ds-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; } .ds-chip { position: relative; display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0.55rem 1.1rem; border: 1px solid var(--color-line, #e4e0d9); background: var(--color-paper, #ffffff); color: var(--color-ink, #17221f); font-family: var(--font-sans, 'Supreme', system-ui, sans-serif); font-size: 0.9375rem; border-radius: 999px; cursor: pointer; user-select: none; transition: background-color 0.3s cubic-bezier(0.22,1,0.36,1), color 0.3s cubic-bezier(0.22,1,0.36,1), border-color 0.3s; } .ds-chip input { position: absolute; opacity: 0; width: 1px; height: 1px; } .ds-chip:hover { border-color: #cfcac1; } .ds-chip.ds-on, .ds-chip:has(input:checked) { background: var(--color-ink, #17221f); border-color: var(--color-ink, #17221f); color: var(--color-paper, #ffffff); } .ds-chip:has(input:focus-visible) { outline: 2px solid var(--color-ink, #17221f); outline-offset: 2px; }"
+    },
+    {
+      "name": "Counter",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Minus / value / plus instead of a typed number; empty means Any.",
+      "html": "<div class=\"ds-count-box\"><button class=\"ds-round\" aria-label=\"Decrease\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"><path d=\"M5 12h14\"/></svg></button><output class=\"ds-val\">3+</output><button class=\"ds-round\" aria-label=\"Increase\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"><path d=\"M5 12h14\"/><path d=\"M12 5v14\"/></svg></button></div>",
+      "css": ".ds-count-box { display: flex; align-items: center; justify-content: space-between; max-width: 20rem; height: 3.25rem; padding: 0.375rem; border: 1px solid var(--color-line, #e4e0d9); border-radius: 0.875rem; background: var(--color-paper, #ffffff); font-family: var(--font-sans, 'Supreme', system-ui, sans-serif); } .ds-round { display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border: 0; border-radius: 999px; background: transparent; color: var(--color-ink, #17221f); cursor: pointer; transition: background-color 0.2s; } .ds-round:hover { background: var(--color-stone, #f6f4f0); } .ds-round:focus-visible { outline: 2px solid var(--color-ink, #17221f); outline-offset: 3px; } .ds-val { min-width: 4rem; text-align: center; font-size: 1rem; font-variant-numeric: tabular-nums; color: var(--color-ink, #17221f); }"
+    },
+    {
+      "name": "Property Card",
+      "kind": "card",
+      "refersTo": "property-card-photo",
+      "description": "Rounded photo with operation tag and hover arrow, then serif title, place, price and specs. Gentle 1.025 hover zoom.",
+      "html": "<a class=\"ds-card\" href=\"#\"><span class=\"ds-photo\"><span class=\"ds-img\"></span><span class=\"ds-tag\">For sale</span><span class=\"ds-arrow\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></span></span><span class=\"ds-title\">Villa with sea views in Jesús</span><span class=\"ds-meta\">Jesús, Ibiza · Ref 1042</span><span class=\"ds-row\"><span class=\"ds-price\">€3,450,000</span><span class=\"ds-specs\">5 bd · 4 ba · 420 m²</span></span></a>",
+      "css": ".ds-card { display: flex; flex-direction: column; max-width: 24rem; color: var(--color-ink, #17221f); text-decoration: none; font-family: var(--font-sans, 'Supreme', system-ui, sans-serif); } .ds-photo { position: relative; display: block; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 1.25rem; background: var(--color-stone-2, #ece8e1); } .ds-img { position: absolute; inset: 0; background: linear-gradient(160deg, #cfe3e6, #e9dcc6 60%, #b9a98a); transition: transform 2.2s cubic-bezier(0.22,1,0.36,1); } .ds-card:hover .ds-img { transform: scale(1.025); } .ds-tag { position: absolute; left: 1rem; top: 1rem; padding: 0.375rem 0.75rem; border-radius: 999px; background: rgb(255 255 255 / 0.95); font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.01em; } .ds-arrow { position: absolute; right: 1rem; bottom: 1rem; display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border-radius: 999px; background: rgb(255 255 255 / 0.95); opacity: 0; transition: opacity 0.7s; } .ds-card:hover .ds-arrow { opacity: 1; } .ds-card:focus-visible { outline: 2px solid var(--color-ink, #17221f); outline-offset: 3px; border-radius: 4px; } .ds-title { margin-top: 1.25rem; font-family: var(--font-display, 'Gambetta', serif); font-size: 1.45rem; line-height: 1.15; } .ds-meta { margin-top: 0.375rem; font-size: 0.875rem; color: var(--color-muted, #6b6862); } .ds-row { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; } .ds-price { font-size: 1.125rem; font-weight: 500; font-variant-numeric: tabular-nums lining-nums; } .ds-specs { font-size: 0.875rem; color: var(--color-muted, #6b6862); font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "Hero Search",
+      "kind": "custom",
+      "refersTo": "hero-search",
+      "description": "Floating white pill over the hero: sliding Buy/Rent segment, captioned selects, ink Search pill.",
+      "html": "<form class=\"ds-search\"><span class=\"ds-seg\"><span class=\"ds-thumb\"></span><button type=\"button\" class=\"ds-seg-on\">Buy</button><button type=\"button\">Rent</button></span><label class=\"ds-sf\"><span class=\"ds-cap\">Area</span><span class=\"ds-sv\">Any area</span></label><label class=\"ds-sf\"><span class=\"ds-cap\">Type</span><span class=\"ds-sv\">Any type</span></label><label class=\"ds-sf\"><span class=\"ds-cap\">Budget</span><span class=\"ds-sv\">Any budget</span></label><button class=\"ds-go\" type=\"button\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"m20 20-3.5-3.5\"/></svg> Search</button></form>",
+      "css": ".ds-search { display: grid; grid-template-columns: auto 1.2fr 1fr 1fr auto; align-items: center; gap: 0.25rem; padding: 0.5rem; border-radius: 999px; background: var(--color-paper, #ffffff); color: var(--color-ink, #17221f); box-shadow: 0 30px 60px -30px rgb(23 34 31 / 0.45); font-family: var(--font-sans, 'Supreme', system-ui, sans-serif); } .ds-seg { position: relative; display: grid; grid-template-columns: 1fr 1fr; padding: 0.25rem; border-radius: 999px; background: var(--color-stone, #f6f4f0); } .ds-thumb { position: absolute; top: 0.25rem; bottom: 0.25rem; left: 0.25rem; width: calc(50% - 0.25rem); border-radius: 999px; background: var(--color-ink, #17221f); transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); } .ds-seg button { position: relative; z-index: 1; padding: 0.625rem 1.5rem; border: 0; background: none; font: inherit; font-size: 0.9375rem; font-weight: 500; color: var(--color-muted, #6b6862); cursor: pointer; } .ds-seg .ds-seg-on { color: #fff; } .ds-sf { display: flex; flex-direction: column; justify-content: center; height: 4rem; padding: 0 1.25rem; border-radius: 999px; transition: background-color 0.2s; cursor: pointer; } .ds-sf:hover { background: var(--color-stone, #f6f4f0); } .ds-cap { font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.01em; color: var(--color-muted, #6b6862); } .ds-sv { font-size: 0.9375rem; } .ds-go { display: inline-flex; align-items: center; gap: 0.6rem; height: 3.75rem; padding: 0 2rem; border: 0; border-radius: 999px; background: var(--color-ink, #17221f); color: #fff; font: inherit; font-weight: 500; font-size: 0.9375rem; cursor: pointer; transition: background-color 0.3s cubic-bezier(0.22,1,0.36,1); } .ds-go:hover { background: var(--color-ink-2, #2a3833); } .ds-go:focus-visible { outline: 2px solid var(--color-ink, #17221f); outline-offset: 3px; }"
+    },
+    {
+      "name": "Header",
+      "kind": "nav",
+      "refersTo": "logo-badge",
+      "description": "Solid state of the fixed header: turquoise logo badge (the only turquoise), Gambetta wordmark, drawn-underline links, Contact pill.",
+      "html": "<header class=\"ds-head\"><span class=\"ds-brand\"><span class=\"ds-badge\"><svg viewBox=\"240 80 490 790\" width=\"12\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"62\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M355 476 487 138l132 338\"/><path d=\"M287 594c33 68 74 90 120 90 22 0 42-5 62-14l78-35c20-9 40-14 60-14 46 0 82 22 106 74\" stroke-width=\"58\"/><path d=\"M287 744c33 68 74 90 120 90 22 0 42-5 62-14l78-35c20-9 40-14 60-14 46 0 82 22 106 74\" stroke-width=\"58\"/></svg></span><span class=\"ds-word\">La Casa de Susana</span></span><nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Buy</a><a href=\"#\">Rent</a><a href=\"#\">Sell</a><a href=\"#\">Private search</a></nav><a class=\"ds-contact\" href=\"#\">Contact</a></header>",
+      "css": ".ds-head { display: flex; align-items: center; gap: 1.5rem; height: 5rem; padding: 0 3rem; background: rgb(255 255 255 / 0.9); box-shadow: 0 1px 0 var(--color-line, #e4e0d9); backdrop-filter: blur(24px); color: var(--color-ink, #17221f); font-family: var(--font-sans, 'Supreme', system-ui, sans-serif); } .ds-brand { display: flex; align-items: center; gap: 0.75rem; } .ds-badge { display: grid; place-items: center; width: 2.25rem; height: 2.25rem; border-radius: 0.6rem; background: var(--color-mar, #13c6c9); color: #fff; } .ds-word { font-family: var(--font-display, 'Gambetta', serif); font-size: 1.3rem; line-height: 1; } .ds-nav { display: flex; gap: 2rem; margin: 0 auto; font-size: 0.9375rem; } .ds-nav a { color: inherit; text-decoration: none; padding: 0.375rem 0; background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size 0.45s cubic-bezier(0.16,1,0.3,1); } .ds-nav a:hover, .ds-nav a[aria-current='page'] { background-size: 100% 1px; } .ds-nav a:focus-visible { outline: 2px solid var(--color-ink, #17221f); outline-offset: 3px; border-radius: 4px; } .ds-contact { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0 1.25rem; border-radius: 999px; background: var(--color-ink, #17221f); color: #fff; font-size: 0.875rem; font-weight: 500; text-decoration: none; transition: background-color 0.3s; } .ds-contact:hover { background: var(--color-ink-2, #2a3833); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Quiet Gallery",
+    "overview": "A white gallery whose exhibits are Ibiza houses. Pure white paper alternates with a warm stone ground; everything else steps back so the listing photography, large and softly rounded, carries all the colour on the page. Type is a light, refined serif for anything that speaks (Gambetta) and a clean grotesk for anything that works (Supreme). Actions are pine-black pills. The palette is deliberately colourless so a turquoise sea in a listing photo reads as the most saturated thing on screen.\n\nDensity is low and generous: sections breathe on 80px (phone) and 128px (desktop) vertical padding, cards sit in a three-up grid with 56px between rows, and copy is held to readable measures (36–58ch for ledes and body, 68ch for listing prose). The page is built for a phone first, at 390 wide: photo rails swipe, the listing gallery becomes a full-bleed strip, long forms break into short steps with a sticky Continue.\n\nMotion is slow, soft and one-way: photos cross-fade and settle from a gentle zoom, frames unveil from the bottom as they enter, content rises in once, and a listing photo morphs from its card into the listing page. Nothing bounces, nothing loops for attention, and with reduced motion every element is simply present. The system refuses texture, material costume and decorative gimmicks; the user rejected a crafted, material direction as looking cheap.",
+    "keyCharacteristics": [
+      "White and warm-stone grounds in alternation; colour comes only from photography.",
+      "Gambetta Light display over Supreme UI; tabular numerals for every price, area and count.",
+      "Large rounded photography (20px cards, 28px hero panels) with generous margins.",
+      "Ink pill buttons; a single ink focus ring; hairlines instead of boxes.",
+      "Slow cross-fades, bottom-up mask reveals, a 1.025 hover zoom, and a card-to-listing shared-element transition.",
+      "Mobile-first: rails, a swipeable photo strip, stepped forms, 44px+ targets."
+    ],
+    "rules": [
+      { "name": "The Houses Carry the Colour Rule", "body": "The interface is white, stone and ink. Any saturated colour on screen must come from a photograph.", "section": "colors" },
+      { "name": "The Logo-Only Turquoise Rule", "body": "Mar appears only as the logo badge. It is never a link colour, a button, an active state, a tint or a section ground.", "section": "colors" },
+      { "name": "The Ink Means Act Rule", "body": "A filled ink shape is either an action (pill button) or a chosen state (selected chip, active segment, checked box, progress). Ink is not used for decoration.", "section": "colors" },
+      { "name": "The Light Serif Rule", "body": "Display and section headings are Gambetta Light (300). Weight 400 is for small serif sizes (card titles, CRM subheads, prices); 500 is reserved.", "section": "typography" },
+      { "name": "The Tabular Numbers Rule", "body": "Every price, area, bedroom count, reference number, phone number and step counter uses tabular lining numerals.", "section": "typography" },
+      { "name": "The Sentence Case Rule", "body": "Labels are sentence case at 0.01em tracking. The only uppercase text is the two-letter locale switch (EN/ES).", "section": "typography" },
+      { "name": "The Float-Only Shadow Rule", "body": "A surface earns a shadow only when it floats over a photograph or answers a hover. Cards, form shells and sections never carry a resting shadow.", "section": "elevation" },
+      { "name": "The Glass Over Photos Rule", "body": "Translucency and backdrop blur are used only where UI sits on imagery or scrolling content: the header, the hero villa chip, the card operation tag, the sticky filter bar and the phone form action bar.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do alternate white (#ffffff) and warm stone (#f6f4f0) sections and let the photographs supply all colour.",
+      "Do use the ink pill for the primary action on every surface, and the light or ghost pill beside it.",
+      "Do set display and section headings in Gambetta Light with negative tracking, and everything functional in Supreme.",
+      "Do round photographs at 20px (cards) or 28px (panels) and keep generous margins around them.",
+      "Do use tabular numerals for every price, area, count and phone number.",
+      "Do design at 390 wide first: rails for collections, a swipe strip for listing photos, sticky actions in forms, 44px minimum targets.",
+      "Do split long forms into validated steps with a progress bar, format money as it is typed, and use counters instead of typed numbers.",
+      "Do keep hover gentle: a 1.025 photo zoom over 2.2s, a 4px arrow nudge, a drawn underline.",
+      "Do carry a view-transition name from each card photo to its listing hero.",
+      "Do make every reveal one-way and give it a static fallback for no-JS and reduced motion."
+    ],
+    "donts": [
+      "Don't add textures, grain, paper, woven or material patterns, or any costume that dresses the site as a craft object.",
+      "Don't use turquoise (#13c6c9) anywhere outside the logo badge: not for links, buttons, active states, tints or grounds.",
+      "Don't use aggressive hover: no zoom beyond 1.025 on photos, no card lifts, bounces, tilts or fast scale jumps.",
+      "Don't put eyebrows or kickers (small uppercase labels) above headings.",
+      "Don't use ghost wordmarks: no oversized, faded brand name or headline text as background decoration.",
+      "Don't invent claims: no testimonials, awards, press, sales figures or certifications beyond what the product facts support.",
+      "Don't add resting shadows to cards, sections or form shells.",
+      "Don't use faint (#9b978f) for body text."
+    ]
+  }
+}
