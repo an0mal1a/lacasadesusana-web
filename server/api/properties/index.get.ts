@@ -22,5 +22,5 @@ export default defineCachedEventHandler(
     const { lang, ...filters } = q
     return listProperties(event, filters as PropertyQuery, lang)
   },
-  { maxAge: 300, swr: true, name: 'properties', getKey: event => JSON.stringify(getQuery(event)) },
+  { maxAge: 300, swr: true, name: 'properties-v2', getKey: event => JSON.stringify(getQuery(event)) },
 )

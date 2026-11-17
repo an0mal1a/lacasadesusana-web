@@ -59,13 +59,7 @@ const expanded = ref(false)
 const longText = computed(() => (prop.value.descriptionHtml?.match(/<(p|h\d|ul)\b/g)?.length ?? 0) > 5)
 
 /* Map: approximate listings show an area, never a pin */
-const mapSrc = computed(() => {
-  const { lat, lon, addressPrivacy } = prop.value
-  if (!lat || !lon || addressPrivacy === 'hidden') return null
-  const d = addressPrivacy === 'public' ? 0.008 : 0.03
-  const marker = addressPrivacy === 'public' ? `&marker=${lat},${lon}` : ''
-  return `https://www.openstreetmap.org/export/embed.html?bbox=${lon - d * 1.6},${lat - d},${lon + d * 1.6},${lat + d}&layer=mapnik${marker}`
-})
+const showMap = computed(() => !!prop.value.lat && !!prop.value.lon && prop.value.addressPrivacy !== 'hidden')
 
 /* Enquiry */
 const enquiry = useLeadForm('/api/forms/contact', contactSchema, {
@@ -266,9 +260,8 @@ useSchemaOrg([
             <h2 class="font-display text-[1.75rem] font-light">{{ t('listing.location') }}</h2>
             <p class="mt-3 text-[1rem]">{{ [prop.address, prop.city, prop.province].filter(Boolean).join(', ') }}</p>
             <p class="mt-1 text-[0.875rem] text-muted">{{ prop.addressPrivacy === 'hidden' ? t('listing.locationHidden') : prop.addressPrivacy === 'approximate' ? t('listing.locationApprox') : '' }}</p>
-            <div v-if="mapSrc" class="relative mt-6 aspect-[16/9] overflow-hidden rounded-[var(--radius-card)] bg-stone-2">
-              <iframe :src="mapSrc" :title="`${t('listing.location')} — ${prop.city}`" class="size-full grayscale-[0.6]" loading="lazy" />
-              <span v-if="prop.addressPrivacy !== 'public'" class="pointer-events-none absolute left-1/2 top-1/2 size-40 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-ink/60 bg-ink/10" aria-hidden="true" />
+            <div v-if="showMap" class="relative z-0 mt-6 aspect-[4/3] overflow-hidden rounded-[var(--radius-card)] bg-stone-2 sm:aspect-[16/9]">
+              <ListingMap :id="prop.id" :lat="prop.lat!" :lon="prop.lon!" :privacy="prop.addressPrivacy" :label="`${t('listing.location')} — ${prop.city}`" />
             </div>
           </div>
         </article>
@@ -281,6 +274,7 @@ useSchemaOrg([
               <span class="link-under">{{ t('listing.applyRental') }}</span> <ArrowRight class="nudge size-4" />
             </NuxtLink>
           </div>
+
           <FormShell
             :form="enquiry.form"
             :errors="enquiry.errors.value"

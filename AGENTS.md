@@ -34,7 +34,7 @@ Without `NUXT_VESTTA_API_KEY` the site serves **development fixtures** (`server/
 app/
   pages/                 index, properties/index, properties/[slug], contact,
                          private-search, rental-profile, sell, about, privacy
-  components/            SiteHeader, HeroSearch, RevealImage, PropertyCard,
+  components/            SiteHeader, HeroSearch, RevealImage, PropertyCard, ListingMap,
                          SiteFooter, FormPage, SusanaAside, LogoMark, BrandIcon
   plugins/reveal.ts      v-reveal scroll-in directive
   components/form/       FormShell, FormField, FormChoice, FormCheck, FormPhone
@@ -70,7 +70,8 @@ i18n/locales/            en.json, es.json (keys must stay in parity)
 - `409` on inquiries means "phone already known in Vestta". Treat it as success (`known: true`), never retry.
 - If Vestta fails, `deliverLead` falls back to email so no lead is lost.
 - Business vocabulary is Spanish (`venta`, `alquiler`, `casa`, `apartamento`). Map UI labels through i18n.
-- Respect `specs.address_privacy`: approximate locations are shown as an area, never as a pin.
+- Listing URLs always end with the Vestta ID (`/properties/villa-nura-ses-torres-1977`); the CRM's bot rules rely on it. Build them with `listingSlug()` and parse with `idFromSlug()`. A bare ID redirects (301) to the canonical slug.
+- Respect `specs.address_privacy`: approximate locations are shown as an area, never as a pin (`ListingMap`, Leaflet; the area centre is offset per listing so it never points at the house).
 - Listing translations come from `specs.translations[locale]`; the base title and description are Spanish.
 
 ## Conventions

@@ -1,5 +1,5 @@
 import type { Operation, Property, PropertyFeature } from '#shared/types/property'
-import { slugify } from '#shared/utils/property'
+import { listingSlug } from '#shared/utils/property'
 
 /** Locale → key used in Vestta's `specs.translations`. */
 const TRANSLATION_KEY: Record<string, string> = { en: 'en', es: '', de: 'de', fr: 'fr', it: 'it', pt: 'pt', ca: 'ca' }
@@ -95,7 +95,7 @@ export function normalizeProperty(raw: any, locale = 'en'): Property {
 
   return {
     id: raw.id,
-    slug: `${raw.id}-${slugify(finalTitle) || 'property'}`,
+    slug: listingSlug(raw.id, finalTitle),
     title: finalTitle,
     summary: summarise(plain),
     descriptionHtml,
