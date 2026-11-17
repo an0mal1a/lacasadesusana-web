@@ -44,4 +44,4 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 - Intro section follows the user's reference `.impeccable/review/reference-intro.png`: organic-cornered photo, heading + text + button, vertical divider, three icon facts (On Ibiza since 1999 / Own agency since 2010 / 9 in 10 homes direct).
 - Card hover must be gentle (the earlier zoom read as aggressive).
 - Overall reference: `.impeccable/review/reference-pinterest.jpg` (warm white, serif display, dark pill buttons, floating search pill, rounded listing cards with spec icons).
-- Live Vestta data is connected; listing photos carry a Vestta watermark that the site cannot remove (CRM-side setting).
+- Live Vestta data is connected; listing photos carry the agency watermark set in the CRM (10% of the photo, bottom-left); the site does not ask for it.
